@@ -4,7 +4,9 @@ Kenzie assignment: String2
 """
 # Your name, plus anyone who helped you with this assignment.
 # Give credit where credit is due.
-__author__ = "???"
+import math
+__author__ = "Jo Anna Mollman"
+# help from Amanda Yonce
 
 # Copyright 2010 Google Inc.
 # Licensed under the Apache License, Version 2.0
@@ -23,8 +25,15 @@ __author__ = "???"
 
 
 def verbing(s):
-    # your code here
-    return
+    ending = "ing"
+    other_ending = "ly"
+    if len(s) > 3:
+        if s.endswith("ing"):
+            return(s + other_ending)
+        else:
+            return(s + ending)
+    elif len(s) <= 3:
+        return(s)
 
 
 # E. not_bad
@@ -37,8 +46,12 @@ def verbing(s):
 
 
 def not_bad(s):
-    # your code here
-    return
+    new_s = s
+    first_not = s.find("not")
+    first_bad = s.find("bad") + 3
+    if first_not < first_bad:
+        new_s = s[0:first_not] + "good" + s[first_bad:]
+    return new_s
 
 
 # F. front_back
@@ -52,8 +65,23 @@ def not_bad(s):
 
 
 def front_back(a, b):
-    # your code here
-    return
+    a_front = ""
+    a_sechalf = ""
+    b_front = ""
+    b_sechalf = ""
+    if len(a) % 2 == 0:
+        a_front = a[0:len(a) // 2]
+        a_sechalf = a[len(a) // 2::]
+    else:
+        a_front = a[0:len(a) // 2 + 1]
+        a_sechalf = a[len(a) // 2 + 1::]
+    if len(b) % 2 == 0:
+        b_front = b[0:len(b) // 2]
+        b_sechalf = b[len(b) // 2::]
+    else:
+        b_front = b[0:len(b) // 2 + 1]
+        b_sechalf = b[len(b) // 2 + 1::]
+    return a_front + b_front + a_sechalf + b_sechalf
 
 
 # Provided simple test() function used in main() to print

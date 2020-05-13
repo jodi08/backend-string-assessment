@@ -4,7 +4,9 @@ Kenzie assignment: String1
 """
 # Your name, plus anyone who helped you with this assignment.
 # Give credit where credit is due.
-__author__ = "???"
+__author__ = "Jo Anna Mollman"
+# helper = Amanda Yonce told me to replace print with return
+# helper = Coach Devon helped with fine tuning fix_start
 
 # Copyright 2010 Google Inc.
 # Licensed under the Apache License, Version 2.0
@@ -28,8 +30,10 @@ __author__ = "???"
 
 
 def donuts(count):
-    # your code here
-    return
+    if count < 10:
+        return(f"Number of donuts: {count}")
+    elif count >= 10:
+        return("Number of donuts: many")
 
 
 # B. both_ends
@@ -42,8 +46,14 @@ def donuts(count):
 
 
 def both_ends(s):
-    # your code here
-    return
+    for char in s:
+        if len(s) <= 2:
+            return("")
+        elif len(s) > 2:
+            new_s = s[0:2]
+            other_s = s[-2:]
+            last_s = new_s + other_s
+            return(last_s)
 
 
 # C. fix_start
@@ -58,8 +68,10 @@ def both_ends(s):
 
 
 def fix_start(s):
-    # your code here
-    return
+    front = s[0]
+    back = s[1:]
+    new_back = back.replace(front, "*")
+    return(front + new_back)
 
 
 # D. mix_up
@@ -73,8 +85,7 @@ def fix_start(s):
 
 
 def mix_up(a, b):
-    # your code here
-    return
+    return(b[0:2] + a[2:] + " " + a[0:2] + b[2:])
 
 
 # Provided simple test() function used in main() to print
